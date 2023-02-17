@@ -12,7 +12,6 @@ var isValid = function(s) {
         i++;
         let open =stack[stack.length - 2]
         let close=stack[stack.length - 1]
-
         let potentialParens = open + close
         if(parens.includes(potentialParens)){
             stack.pop();
