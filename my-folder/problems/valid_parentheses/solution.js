@@ -10,9 +10,8 @@ var isValid = function(s) {
     while(i<s.length){
         stack.push(s[i]);
         i++;
-        let open =stack[stack.length - 2]
-        let close=stack[stack.length - 1]
-
+        let open =stack[stack.length - 2];
+        let close=stack[stack.length - 1];
         let potentialParens = open + close
         if(parens.includes(potentialParens)){
             stack.pop();
