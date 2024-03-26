@@ -1,1 +1,2 @@
-# Weekly-Coding-Practice leetcode
+# Data Structures & Algorithms
+# Problem Solving
