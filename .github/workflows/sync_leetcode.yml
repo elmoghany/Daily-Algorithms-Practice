@@ -3,7 +3,7 @@ name: Sync Leetcode
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 8 * * 6"
+    - cron: "0 12 * * *"
 
 jobs:
   build:
@@ -16,4 +16,4 @@ jobs:
           github-token: ${{ secrets.CODING_PRACTICE_TOKEN }}
           leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
-          destination-folder: LEETCODE_JS
+          destination-folder: LEETCODE_PYTHON
