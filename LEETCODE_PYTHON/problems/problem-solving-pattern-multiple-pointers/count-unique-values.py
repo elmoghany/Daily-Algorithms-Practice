@@ -63,7 +63,7 @@ def countUniqueValues(arr):
         print(f'i=',i,'j=',j)
     return i+1
 
-# print(f"unique count is", countUniqueValues([1,1,1,1,1,2])) #2
+print(f"unique count is", countUniqueValues([1,1,1,1,1,2])) #2
 print(f"unique count is",countUniqueValues([1,2,3,4,4,4,7,7,12,12,13])) #7
-# print(f"unique count is",countUniqueValues([])) #0
-# print(f"unique count is",countUniqueValues([-2,-1,-1,0,1])) #4
+print(f"unique count is",countUniqueValues([])) #0
+print(f"unique count is",countUniqueValues([-2,-1,-1,0,1])) #4
