@@ -1,8 +1,6 @@
-#!/usr/bin/env python
-# import sys
+import sys
 
 def same(arr1, arr2):
-    arr3 = []
     len1 = len(arr1)
     len2 = len(arr2)
     len1or2 = 0
@@ -24,3 +22,5 @@ def same(arr1, arr2):
             print("True")
         elif i == count-1:
             print("Flase")
+            
+same([1,2,3],[4,1,9])
