@@ -53,6 +53,7 @@ def countUniqueValues(arr):
     #         else:
     #             unique_arr.append(arr[pointer])
     #             return len(unique_arr)
+###
 
 # 4th solution
     i=0
