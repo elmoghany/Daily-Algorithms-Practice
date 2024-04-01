@@ -51,10 +51,23 @@ class LinkedList:
                 self.head = None
                 self.tail = None
             return temp
+        
     #create node
     #add node to the beginning
     def prepend(self, value):
-        pass
+        new_node = Node(value)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+            self.length += 1
+        elif self.length == 1:
+            self.head = new_node
+            self.head.next = self.tail
+        else:
+            temp_head = self.head
+            self.head = new_node
+            self.head.next = temp_head
+            
     #create node
     #insert node at index
     def insert(self, index, value):
