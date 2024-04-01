@@ -73,17 +73,15 @@ class LinkedList:
             
     def pop_first(self):
         if self.length == 0:
-            return False
-        elif self.length == 1:
-            temp_head = self.head
-            self.head = None
-            self.tail = None
-            self.length = 0
-            return temp_head
+            return None
         else:
-            temp_head = self.head
+            pop_head = self.head
             self.head = self.head.next
-            self.length -= 1
+            pop_head.next = None
+            self.length -= 1 
+            if self.length == 0:
+                self.tail = None
+            return pop_head
             
     #create node
     #insert node at index
@@ -168,3 +166,27 @@ check(None, popped_node, "Popped node from empty linked list (third pop):")
 check(None, linked_list.head, "Head of linked list (after third pop):")
 check(None, linked_list.tail, "Tail of linked list (after third pop):")
 check(0, linked_list.length, "Length of linked list (after third pop):")
+
+
+
+my_linked_list = LinkedList(2)
+my_linked_list.append(1)
+
+
+# (2) Items - Returns 2 Node
+print(my_linked_list.pop_first().value)
+# (1) Item -  Returns 1 Node
+print(my_linked_list.pop_first().value)
+# (0) Items - Returns None
+print(my_linked_list.pop_first())
+
+
+
+"""
+    EXPECTED OUTPUT:
+    ----------------
+    2
+    1
+    None
+
+"""
