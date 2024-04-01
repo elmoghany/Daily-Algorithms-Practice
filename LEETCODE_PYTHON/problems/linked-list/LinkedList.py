@@ -15,7 +15,16 @@ class LinkedList:
     #create node
     #add node to the end
     def append(self, value):
-        pass
+        new_node = Node(value)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.next = new_node        
+            self.tail = new_node
+        self.length += 1
+        return True
+        
     #create node
     #add node to the beginning
     def prepend(self, value):
