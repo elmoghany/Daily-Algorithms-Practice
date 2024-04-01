@@ -69,6 +69,21 @@ class LinkedList:
             self.head = new_node
             self.head.next = temp_head
             self.length += 1
+        return True
+            
+    def pop_first(self):
+        if self.length == 0:
+            return False
+        elif self.length == 1:
+            temp_head = self.head
+            self.head = None
+            self.tail = None
+            self.length = 0
+            return temp_head
+        else:
+            temp_head = self.head
+            self.head = self.head.next
+            self.length -= 1
             
     #create node
     #insert node at index
