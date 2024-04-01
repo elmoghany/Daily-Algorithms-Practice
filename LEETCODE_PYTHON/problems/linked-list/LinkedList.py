@@ -39,8 +39,9 @@ class LinkedList:
         else:
             temp = self.head
             while temp is not None:
+                pre = temp
                 temp = temp.next
-            self.tail = temp
+            self.tail = pre
             self.tail.next = None
             self.length -= 1
     #create node
