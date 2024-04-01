@@ -91,11 +91,10 @@ class LinkedList:
         elif index == 0:
             return self.head
         else:
-            for i in range(index+1):
-                temp = self.head
-                if (i == index):
-                    return temp
-                temp = self.head.next
+            temp = self.head
+            for _ in range(index):
+                temp = temp.next
+            return temp
         
     #create node
     #insert node at index
