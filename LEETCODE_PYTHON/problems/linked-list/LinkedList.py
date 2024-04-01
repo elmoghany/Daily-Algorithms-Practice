@@ -82,7 +82,21 @@ class LinkedList:
             if self.length == 0:
                 self.tail = None
             return pop_head
-            
+    
+    def get(self, index):
+        if (index > self.length-1) or (index < 0):
+            return None
+        elif (index == (self.length-1)):
+            return self.tail
+        elif index == 0:
+            return self.head
+        else:
+            for i in range(index+1):
+                temp = self.head
+                if (i == index):
+                    return temp
+                temp = self.head.next
+        
     #create node
     #insert node at index
     def insert(self, index, value):
