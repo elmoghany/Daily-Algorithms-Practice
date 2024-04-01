@@ -28,9 +28,11 @@ class LinkedList:
     #return last node value
     #remove last node
     def pop(self):
-        if self.tail is None:
+        #length = 0
+        if self.length == 0: 
             return None
-        elif self.tail == self.head:
+        #length = 1
+        elif self.head == self.tail:
             self.tail = None
             self.head = None
             self.length = 0
@@ -44,6 +46,7 @@ class LinkedList:
             self.tail = pre
             self.tail.next = None
             self.length -= 1
+            return temp.value
     #create node
     #add node to the beginning
     def prepend(self, value):
