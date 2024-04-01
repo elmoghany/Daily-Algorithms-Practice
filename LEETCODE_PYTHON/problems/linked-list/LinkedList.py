@@ -106,10 +106,25 @@ class LinkedList:
     #create node
     #insert node at index
     def insert(self, index, value):
-        pass
+        if ((index < 0) or (index >= self.length)):
+            return False
+        elif index == 0:
+            return self.prepend(value)
+        elif (index == (self.length-1)):
+            return self.append(value)
+        else:
+            new_node = Node(value)
+            pre_temp = self.get(index-1)
+            new_node.next = pre_temp.next
+            pre_temp.next = new_node
+            self.length += 1
+            return True
     ################################
     ################################
     def remove(self, index, value):
+        pass
+    
+    def reverse():
         pass
     
     def print_list(self):
