@@ -106,7 +106,7 @@ class LinkedList:
     #create node
     #insert node at index
     def insert(self, index, value):
-        if ((index < 0) or (index >= self.length)):
+        if ((index < 0) or (index > self.length)):
             return False
         elif index == 0:
             return self.prepend(value)
