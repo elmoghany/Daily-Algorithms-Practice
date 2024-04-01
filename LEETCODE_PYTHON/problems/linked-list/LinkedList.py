@@ -63,10 +63,12 @@ class LinkedList:
         elif self.length == 1:
             self.head = new_node
             self.head.next = self.tail
+            self.length += 1
         else:
             temp_head = self.head
             self.head = new_node
             self.head.next = temp_head
+            self.length += 1
             
     #create node
     #insert node at index
