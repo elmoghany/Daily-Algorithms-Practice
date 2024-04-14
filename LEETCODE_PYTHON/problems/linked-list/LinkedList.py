@@ -161,7 +161,7 @@ class LinkedList:
         # empty LL - edge case
         if one_step_ptr is None:
             return None
-        # ONE LL
+        # ONE LL - edge case
         elif one_step_ptr.next is None:
             return self.head
         else:
