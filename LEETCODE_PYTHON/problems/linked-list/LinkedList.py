@@ -155,23 +155,21 @@ class LinkedList:
             print(temp.value)
             temp = temp.next
 
-def find_middle_node(self):
-    # empty LL
-    if self.head is None:
-        return None
-    # ONE LL
-    elif self.head.next is None:
-        return self.head
-    else:
+    def find_middle_node(self):
         one_step_ptr = self.head
-        two_step_ptr = one_step_ptr.next
-        while two_step_ptr is not None:
-            if two_step_ptr.next is None:
-                return one_step_ptr.next
-            else:
+        two_step_ptr = self.head
+        # empty LL
+        if one_step_ptr is None:
+            return None
+        # ONE LL
+        elif one_step_ptr.next is None:
+            return self.head
+        else:
+            while two_step_ptr is not None and two_step_ptr.next is not None:
                 one_step_ptr = one_step_ptr.next
                 two_step_ptr = two_step_ptr.next.next
-
+            return one_step_ptr
+                
 ###########################################
 ###########################################
 ###########################################
@@ -179,164 +177,148 @@ def find_middle_node(self):
 ###########################################
 ###########################################
 
-my_linked_list = LinkedList(1)
-my_linked_list.append(2)
-my_linked_list.append(3)
-my_linked_list.append(4)
-my_linked_list.append(5)
-
-print( my_linked_list.find_middle_node().value )
 
 
 
-"""
-    EXPECTED OUTPUT:
-    ----------------
-    3
-    
-"""
+# def check(expect, actual, message):
+#     print(message)
+#     print("EXPECTED:", expect)
+#     print("RETURNED:", actual)
+#     print("PASS" if expect == actual else "FAIL", "\n")
+
+# print("\n----- Test: Pop on linked list with one node -----\n")
+# linked_list = LinkedList(1)
+# linked_list.print_list()
+# popped_node = linked_list.pop()
+# check(1, popped_node.value, "Value of popped node:")
+# check(None, linked_list.head, "Head of linked list:")
+# check(None, linked_list.tail, "Tail of linked list:")
+# check(0, linked_list.length, "Length of linked list:")
+
+# print("\n----- Test: Pop on linked list with multiple nodes -----\n")
+# linked_list = LinkedList(1)
+# linked_list.append(2)
+# linked_list.append(3)
+# linked_list.print_list()
+# popped_node = linked_list.pop()
+# check(3, popped_node.value, "Value of popped node:")
+# check(1, linked_list.head.value, "Head of linked list:")
+# check(2, linked_list.tail.value, "Tail of linked list:")
+# check(2, linked_list.length, "Length of linked list:")
+
+# print("\n----- Test: Pop on empty linked list -----\n")
+# linked_list = LinkedList(1)
+# linked_list.head = None
+# linked_list.tail = None
+# linked_list.length = 0
+# popped_node = linked_list.pop()
+# check(None, popped_node, "Popped node from empty linked list:")
+# check(None, linked_list.head, "Head of linked list:")
+# check(None, linked_list.tail, "Tail of linked list:")
+# check(0, linked_list.length, "Length of linked list:")
+
+# print("\n----- Test: Pop all -----\n")
+# linked_list = LinkedList(1)
+# linked_list.append(2)
+# linked_list.print_list()
+# popped_node = linked_list.pop()
+# check(2, popped_node.value, "Value of popped node (first pop):")
+# check(1, linked_list.head.value, "Head of linked list (after first pop):")
+# check(1, linked_list.tail.value, "Tail of linked list (after first pop):")
+# check(1, linked_list.length, "Length of linked list (after first pop):")
+# popped_node = linked_list.pop()
+# check(1, popped_node.value, "Value of popped node (second pop):")
+# check(None, linked_list.head, "Head of linked list (after second pop):")
+# check(None, linked_list.tail, "Tail of linked list (after second pop):")
+# check(0, linked_list.length, "Length of linked list (after second pop):")
+# popped_node = linked_list.pop()
+# check(None, popped_node, "Popped node from empty linked list (third pop):")
+# check(None, linked_list.head, "Head of linked list (after third pop):")
+# check(None, linked_list.tail, "Tail of linked list (after third pop):")
+# check(0, linked_list.length, "Length of linked list (after third pop):")
 
 
 
-def check(expect, actual, message):
-    print(message)
-    print("EXPECTED:", expect)
-    print("RETURNED:", actual)
-    print("PASS" if expect == actual else "FAIL", "\n")
+# my_linked_list = LinkedList(2)
+# my_linked_list.append(1)
 
-print("\n----- Test: Pop on linked list with one node -----\n")
-linked_list = LinkedList(1)
-linked_list.print_list()
-popped_node = linked_list.pop()
-check(1, popped_node.value, "Value of popped node:")
-check(None, linked_list.head, "Head of linked list:")
-check(None, linked_list.tail, "Tail of linked list:")
-check(0, linked_list.length, "Length of linked list:")
 
-print("\n----- Test: Pop on linked list with multiple nodes -----\n")
-linked_list = LinkedList(1)
-linked_list.append(2)
-linked_list.append(3)
-linked_list.print_list()
-popped_node = linked_list.pop()
-check(3, popped_node.value, "Value of popped node:")
-check(1, linked_list.head.value, "Head of linked list:")
-check(2, linked_list.tail.value, "Tail of linked list:")
-check(2, linked_list.length, "Length of linked list:")
-
-print("\n----- Test: Pop on empty linked list -----\n")
-linked_list = LinkedList(1)
-linked_list.head = None
-linked_list.tail = None
-linked_list.length = 0
-popped_node = linked_list.pop()
-check(None, popped_node, "Popped node from empty linked list:")
-check(None, linked_list.head, "Head of linked list:")
-check(None, linked_list.tail, "Tail of linked list:")
-check(0, linked_list.length, "Length of linked list:")
-
-print("\n----- Test: Pop all -----\n")
-linked_list = LinkedList(1)
-linked_list.append(2)
-linked_list.print_list()
-popped_node = linked_list.pop()
-check(2, popped_node.value, "Value of popped node (first pop):")
-check(1, linked_list.head.value, "Head of linked list (after first pop):")
-check(1, linked_list.tail.value, "Tail of linked list (after first pop):")
-check(1, linked_list.length, "Length of linked list (after first pop):")
-popped_node = linked_list.pop()
-check(1, popped_node.value, "Value of popped node (second pop):")
-check(None, linked_list.head, "Head of linked list (after second pop):")
-check(None, linked_list.tail, "Tail of linked list (after second pop):")
-check(0, linked_list.length, "Length of linked list (after second pop):")
-popped_node = linked_list.pop()
-check(None, popped_node, "Popped node from empty linked list (third pop):")
-check(None, linked_list.head, "Head of linked list (after third pop):")
-check(None, linked_list.tail, "Tail of linked list (after third pop):")
-check(0, linked_list.length, "Length of linked list (after third pop):")
+# # (2) Items - Returns 2 Node
+# print(my_linked_list.pop_first().value)
+# # (1) Item -  Returns 1 Node
+# print(my_linked_list.pop_first().value)
+# # (0) Items - Returns None
+# print(my_linked_list.pop_first())
 
 
 
-my_linked_list = LinkedList(2)
-my_linked_list.append(1)
+# """
+#     EXPECTED OUTPUT:
+#     ----------------
+#     2
+#     1
+#     None
 
-
-# (2) Items - Returns 2 Node
-print(my_linked_list.pop_first().value)
-# (1) Item -  Returns 1 Node
-print(my_linked_list.pop_first().value)
-# (0) Items - Returns None
-print(my_linked_list.pop_first())
-
-
-
-"""
-    EXPECTED OUTPUT:
-    ----------------
-    2
-    1
-    None
-
-"""
+# """
 
 
 
 
-my_linked_list = LinkedList(11)
-my_linked_list.append(3)
-my_linked_list.append(23)
-my_linked_list.append(7)
+# my_linked_list = LinkedList(11)
+# my_linked_list.append(3)
+# my_linked_list.append(23)
+# my_linked_list.append(7)
 
-print('LL before set_value():')
-my_linked_list.print_list()
+# print('LL before set_value():')
+# my_linked_list.print_list()
 
-my_linked_list.set_value(1,4)
+# my_linked_list.set_value(1,4)
 
-print('\nLL after set_value():')
-my_linked_list.print_list()
-
-
-
-"""
-    EXPECTED OUTPUT:
-    ----------------
-    LL before set_value():
-    11
-    3
-    23
-    7
-
-    LL after set_value():
-    11
-    4
-    23
-    7
-"""
+# print('\nLL after set_value():')
+# my_linked_list.print_list()
 
 
-my_linked_list = LinkedList(1)
-my_linked_list.append(2)
-my_linked_list.append(3)
-my_linked_list.append(4)
-my_linked_list.append(5)
 
-print('LL before remove():')
-my_linked_list.print_list()
+# """
+#     EXPECTED OUTPUT:
+#     ----------------
+#     LL before set_value():
+#     11
+#     3
+#     23
+#     7
 
-print('\nRemoved node:')
-print(my_linked_list.remove(2).value)
-print('LL after remove() in middle:')
-my_linked_list.print_list()
+#     LL after set_value():
+#     11
+#     4
+#     23
+#     7
+# """
 
-print('\nRemoved node:')
-print(my_linked_list.remove(0).value)
-print('LL after remove() of first node:')
-my_linked_list.print_list()
 
-print('\nRemoved node:')
-print(my_linked_list.remove(2).value)
-print('LL after remove() of last node:')
-my_linked_list.print_list()
+# my_linked_list = LinkedList(1)
+# my_linked_list.append(2)
+# my_linked_list.append(3)
+# my_linked_list.append(4)
+# my_linked_list.append(5)
+
+# print('LL before remove():')
+# my_linked_list.print_list()
+
+# print('\nRemoved node:')
+# print(my_linked_list.remove(2).value)
+# print('LL after remove() in middle:')
+# my_linked_list.print_list()
+
+# print('\nRemoved node:')
+# print(my_linked_list.remove(0).value)
+# print('LL after remove() of first node:')
+# my_linked_list.print_list()
+
+# print('\nRemoved node:')
+# print(my_linked_list.remove(2).value)
+# print('LL after remove() of last node:')
+# my_linked_list.print_list()
 
 
 
@@ -371,4 +353,23 @@ my_linked_list.print_list()
     2
     4
 
+"""
+
+my_linked_list2 = LinkedList(1)
+my_linked_list2.append(2)
+my_linked_list2.append(3)
+my_linked_list2.append(4)
+my_linked_list2.append(5)
+# 1 -> 2 -> 3 -> 4 -> 5
+print("##########################")
+my_linked_list2.print_list()
+print(f"middle node =>  {my_linked_list2.find_middle_node().value}" )
+
+
+
+"""
+    EXPECTED OUTPUT:
+    ----------------
+    3
+    
 """
