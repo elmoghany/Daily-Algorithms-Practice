@@ -156,17 +156,45 @@ class LinkedList:
             temp = temp.next
 
 def find_middle_node(self):
-    pass
+    # empty LL
+    if self.head is None:
+        return None
+    # ONE LL
+    elif self.head.next is None:
+        return self.head
+    else:
+        one_step_ptr = self.head
+        two_step_ptr = one_step_ptr.next
+        while two_step_ptr is not None:
+            if two_step_ptr.next is None:
+                return one_step_ptr.next
+            else:
+                one_step_ptr = one_step_ptr.next
+                two_step_ptr = two_step_ptr.next.next
+
+###########################################
+###########################################
+###########################################
+###########################################
+###########################################
+###########################################
+
+my_linked_list = LinkedList(1)
+my_linked_list.append(2)
+my_linked_list.append(3)
+my_linked_list.append(4)
+my_linked_list.append(5)
+
+print( my_linked_list.find_middle_node().value )
 
 
-###########################################
-###########################################
-###########################################
-###########################################
-###########################################
-###########################################
 
-
+"""
+    EXPECTED OUTPUT:
+    ----------------
+    3
+    
+"""
 
 
 
