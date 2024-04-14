@@ -155,6 +155,9 @@ class LinkedList:
             print(temp.value)
             temp = temp.next
 
+def find_middle_node(self):
+    pass
+
 
 ###########################################
 ###########################################
