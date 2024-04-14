@@ -158,7 +158,7 @@ class LinkedList:
     def find_middle_node(self):
         one_step_ptr = self.head
         two_step_ptr = self.head
-        # empty LL
+        # empty LL - edge case
         if one_step_ptr is None:
             return None
         # ONE LL
