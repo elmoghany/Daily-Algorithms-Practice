@@ -169,6 +169,24 @@ class LinkedList:
                 one_step_ptr = one_step_ptr.next
                 two_step_ptr = two_step_ptr.next.next
             return one_step_ptr
+            
+    def has_loop(self):
+        fast_ptr = self.head
+        slow_ptr = self.head
+        # empty LL - edge case
+        if slow_ptr is None:
+            return None
+        # ONE LL - edge case
+        elif fast_ptr.next is None:
+            return self.head
+        else:
+            while fast_ptr is not None and fast_ptr.next is not None:
+                slow_ptr = slow_ptr.next
+                fast_ptr = fast_ptr.next.next
+                if fast_ptr == slow_ptr:
+                    return True
+            return False
+                    
                 
 ###########################################
 ###########################################
