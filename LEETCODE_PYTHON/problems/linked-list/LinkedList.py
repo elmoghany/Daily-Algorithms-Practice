@@ -175,7 +175,7 @@ class LinkedList:
         slow_ptr = self.head
         # empty LL - edge case
         if fast_ptr is None:
-            return None
+            return False
         else:
             while fast_ptr is not None and fast_ptr.next is not None:
                 slow_ptr = slow_ptr.next
@@ -185,7 +185,9 @@ class LinkedList:
             return False
             
     def find_kth_from_end(self):
-        pass        
+        fast_ptr = self.fast_ptr
+        slow_ptr = self.slow_ptr
+                
                 
 ###########################################
 ###########################################
