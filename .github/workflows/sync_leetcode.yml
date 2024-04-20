@@ -17,4 +17,4 @@ jobs:
           leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
           destination-folder: LEETCODE_PYTHON
-          verbose: true
+          #verbose: true
