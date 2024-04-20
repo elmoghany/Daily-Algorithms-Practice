@@ -176,9 +176,6 @@ class LinkedList:
         # empty LL - edge case
         if slow_ptr is None:
             return None
-        # ONE LL - edge case
-        elif fast_ptr.next is None:
-            return self.head
         else:
             while fast_ptr is not None and fast_ptr.next is not None:
                 slow_ptr = slow_ptr.next
