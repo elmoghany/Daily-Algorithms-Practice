@@ -184,11 +184,20 @@ class LinkedList:
                     return True
             return False
             
-    def find_kth_from_end(self):
-        fast_ptr = self.fast_ptr
-        slow_ptr = self.slow_ptr
-                
-                
+def find_kth_from_end(ll, k):
+    fast_ptr = ll.head
+    slow_ptr = ll.head
+    
+    for _ in range(k):
+        if fast_ptr is None:
+            return None
+        fast_ptr = fast_ptr.next
+    
+    while fast_ptr:
+        slow_ptr = slow_ptr.next                    
+        fast_ptr = fast_ptr.next                    
+    return slow_ptr
+
 ###########################################
 ###########################################
 ###########################################
