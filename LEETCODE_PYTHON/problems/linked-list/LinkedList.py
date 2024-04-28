@@ -183,7 +183,10 @@ class LinkedList:
                 if fast_ptr == slow_ptr:
                     return True
             return False
-            
+     
+    def partition_list(x):
+        pass
+        
 def find_kth_from_end(ll, k):
     fast_ptr = ll.head
     slow_ptr = ll.head
@@ -198,6 +201,8 @@ def find_kth_from_end(ll, k):
         fast_ptr = fast_ptr.next                    
     return slow_ptr
 
+    
+    
 ###########################################
 ###########################################
 ###########################################
