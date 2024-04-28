@@ -195,7 +195,7 @@ class LinkedList:
                     left = Node(x)
                     left_ptr = ptr
                 else:
-                    left.append(ptr.value)
+                    left.next = ptr
                     left_ptr = ptr
             elif ptr.value >= x:
                 if right is None:
@@ -203,7 +203,7 @@ class LinkedList:
                     right_ptr = ptr
                     right_head = ptr
                 else:
-                    right.append(ptr.value)
+                    right.next = ptr
                     right_ptr = ptr
             else:
                 return None
