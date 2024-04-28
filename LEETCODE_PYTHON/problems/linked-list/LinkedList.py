@@ -184,8 +184,32 @@ class LinkedList:
                     return True
             return False
      
-    def partition_list(x):
-        pass
+    def partition_list(self, x):
+        ptr = self.head
+        if ptr is None:
+            return None
+        left = right = None
+        while ptr is not None:
+            if ptr.value < x:
+                if left is None:
+                    left = Node(x)
+                    left_ptr = ptr
+                else:
+                    left.append(ptr.value)
+                    left_ptr = ptr
+            elif ptr.value >= x:
+                if right is None:
+                    right = Node(x)
+                    right_ptr = ptr
+                    right_head = ptr
+                else:
+                    right.append(ptr.value)
+                    right_ptr = ptr
+            else:
+                return None
+            ptr = ptr.next
+        left_ptr.next = right_head
+        return left
         
 def find_kth_from_end(ll, k):
     fast_ptr = ll.head
