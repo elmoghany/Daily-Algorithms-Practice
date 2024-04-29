@@ -207,6 +207,9 @@ class LinkedList:
         right_tail.next = None
         return left_head.next
         
+    def remove_duplicates():
+        pass
+    
 def find_kth_from_end(ll, k):
     fast_ptr = ll.head
     slow_ptr = ll.head
@@ -220,6 +223,7 @@ def find_kth_from_end(ll, k):
         slow_ptr = slow_ptr.next                    
         fast_ptr = fast_ptr.next                    
     return slow_ptr
+
 
     
     
