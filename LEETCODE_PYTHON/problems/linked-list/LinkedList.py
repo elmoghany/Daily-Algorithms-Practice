@@ -207,9 +207,20 @@ class LinkedList:
         right_tail.next = None
         return left_head.next
         
-    def remove_duplicates():
-        pass
-    
+    def remove_duplicates(self):
+        ptr = self.head
+        prev_ptr = None
+        unique_list = set()
+        
+        while ptr is not None:
+            if ptr.value not in unique_list:
+                unique_list.add(ptr.value)
+                prev_ptr = ptr
+                ptr = ptr.next
+            else:
+                prev_ptr = ptr.next
+                ptr = ptr.next
+            
 def find_kth_from_end(ll, k):
     fast_ptr = ll.head
     slow_ptr = ll.head
@@ -225,7 +236,18 @@ def find_kth_from_end(ll, k):
     return slow_ptr
 
 
-    
+my_linked_list2 = LinkedList(1)
+my_linked_list2.append(1)
+my_linked_list2.append(2)
+my_linked_list2.append(2)
+my_linked_list2.append(3)
+# 1 -> 1 -> 2 -> 2 -> 3
+print("##########################")
+my_linked_list2.print_list()
+print(f"remove duplicates =>  {my_linked_list2.remove_duplicates()}" )
+my_linked_list2.print_list()
+print("##########################")
+
     
 ###########################################
 ###########################################
