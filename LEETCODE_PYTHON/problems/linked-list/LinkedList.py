@@ -239,17 +239,21 @@ def find_kth_from_end(ll, k):
     return slow_ptr
 
 
-my_linked_list2 = LinkedList(1)
-my_linked_list2.append(1)
-my_linked_list2.append(2)
-my_linked_list2.append(2)
-my_linked_list2.append(3)
-# 1 -> 1 -> 2 -> 2 -> 3
-print("##########################")
-my_linked_list2.print_list()
-print(f"remove duplicates =>  {my_linked_list2.remove_duplicates()}" )
-my_linked_list2.print_list()
-print("##########################")
+linked_list = LinkedList(1)
+linked_list.append(0)
+linked_list.append(1)
+ 
+# Convert binary to decimal
+print(linked_list.binary_to_decimal())  # Output: 5
+ 
+# Create a linked list for binary number 1101
+linked_list = LinkedList(1)
+linked_list.append(1)
+linked_list.append(0)
+linked_list.append(1)
+ 
+# Convert binary to decimal
+print(linked_list.binary_to_decimal())  # Output: 13
 
     
 ###########################################
