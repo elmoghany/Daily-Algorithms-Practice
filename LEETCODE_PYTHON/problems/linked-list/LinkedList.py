@@ -208,18 +208,18 @@ class LinkedList:
         return left_head.next
         
     def remove_duplicates(self):
-        ptr = self.head
-        prev_ptr = None
+        curr = self.head
+        prev_ptr = self.head
         unique_list = set()
         
-        while ptr is not None:
-            if ptr.value not in unique_list:
-                unique_list.add(ptr.value)
-                prev_ptr = ptr
-                ptr = ptr.next
+        while curr:
+            if curr.value not in unique_list:
+                unique_list.add(curr.value)
+                print("ptr value", curr.value)
+                prev_ptr = curr
             else:
-                prev_ptr = ptr.next
-                ptr = ptr.next
+                prev_ptr.next = curr.next
+            curr = curr.next
             
 def find_kth_from_end(ll, k):
     fast_ptr = ll.head
@@ -436,15 +436,15 @@ print("##########################")
 
 ################################################################
 # find_middle_node
-my_linked_list2 = LinkedList(1)
-my_linked_list2.append(2)
-my_linked_list2.append(3)
-my_linked_list2.append(4)
-my_linked_list2.append(5)
-# 1 -> 2 -> 3 -> 4 -> 5
-print("##########################")
-my_linked_list2.print_list()
-print(f"middle node =>  {my_linked_list2.find_middle_node().value}" )
+# my_linked_list2 = LinkedList(1)
+# my_linked_list2.append(2)
+# my_linked_list2.append(3)
+# my_linked_list2.append(4)
+# my_linked_list2.append(5)
+# # 1 -> 2 -> 3 -> 4 -> 5
+# print("##########################")
+# my_linked_list2.print_list()
+# print(f"middle node =>  {my_linked_list2.find_middle_node().value}" )
 
 
 
