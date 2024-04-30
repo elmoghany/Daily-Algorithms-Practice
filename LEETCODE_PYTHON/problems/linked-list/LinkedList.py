@@ -221,6 +221,9 @@ class LinkedList:
                 prev_ptr.next = curr.next
             curr = curr.next
             
+    def binary_to_decimal(self):
+        pass
+    
 def find_kth_from_end(ll, k):
     fast_ptr = ll.head
     slow_ptr = ll.head
