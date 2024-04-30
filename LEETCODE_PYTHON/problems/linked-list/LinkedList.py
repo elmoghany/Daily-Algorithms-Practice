@@ -222,7 +222,16 @@ class LinkedList:
             curr = curr.next
             
     def binary_to_decimal(self):
-        pass
+        curr = self.head
+        sum = 0
+        i=1
+        while curr:
+            sum = sum + 2 ** (self.length-i) * curr.value
+            i += 1
+            curr = curr.next
+            print("sum = " , sum)
+        return sum
+            
     
 def find_kth_from_end(ll, k):
     fast_ptr = ll.head
