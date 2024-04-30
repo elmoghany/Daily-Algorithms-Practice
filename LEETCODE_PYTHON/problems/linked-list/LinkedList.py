@@ -231,8 +231,21 @@ class LinkedList:
             curr = curr.next
             print("sum = " , sum)
         return sum
-            
-    def reverse_between(self):
+    
+    #           |         |
+    # 0    1    2    3    4        
+    # 1 -> 2 -> 3 -> 4 -> 5,  
+    # start_index = 2 and end_index = 4. 
+    # 1 -> 2 -> 5 -> 4 -> 3 .
+    def reverse_between(self, start_index, end_index):
+        #not need to test whether the indexes are out of bounds
+        #If the linked list is empty or has only one node,
+        # the method should return None.
+
+
+        #reverses the nodes of the linked list 
+        # from start_index to  end_index
+        #Linked List does not have a tail
         pass
     
 def find_kth_from_end(ll, k):
