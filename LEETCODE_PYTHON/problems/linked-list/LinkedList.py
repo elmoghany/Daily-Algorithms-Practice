@@ -232,12 +232,7 @@ class LinkedList:
             print("sum = " , sum)
         return sum
     
-    #           |         |
-    # 0    1    2    3    4        
-    # 1 -> 2 -> 3 -> 4 -> 5,  
-    # start_index = 2 and end_index = 4. 
-    # 1 -> 2 -> 5 -> 4 -> 3 .
-    def reverse_between(self, start_index, end_index):
+
         #not need to test whether the indexes are out of bounds
         #If the linked list is empty or has only one node,
         # the method should return None.
@@ -246,7 +241,44 @@ class LinkedList:
         #reverses the nodes of the linked list 
         # from start_index to  end_index
         #Linked List does not have a tail
-        pass
+
+    #           |         |
+    # 0    1    2    3    4        
+    # 1 -> 2 -> 3 -> 4 -> 5,  
+    # start_index = 2 and end_index = 4. 
+    # 1 -> 2 -> 5 -> 4 -> 3 .
+    def reverse_between(self, start_index, end_index):
+        current_ptr = self.head
+        start_ptr = end_ptr = before = head_reversal = before_reversal = after_reversal = tail_reversal = None
+        for count in range(self.length):
+            if (count + 1) == start_index:
+                start_ptr = current_ptr.next
+                before = before_reversal = current_ptr
+                head_reversal = start_ptr
+                
+            if count == end_index:
+                end_ptr = current_ptr
+                after_reversal = current_ptr.next
+                tail_reversal = end_ptr                
+                
+            current_ptr = current_ptr.next
+        
+            
+        temp = tail_reversal
+        tail_reversal = head_reversal
+        head_reversal = temp
+            
+        for count in range(end_index - start_index + 1):
+            current_ptr = head_reversal
+            before = current_ptr
+            after  = current_ptr.next
+            temp = after
+            after.next = before
+            current_ptr = temp.next
+        
+        before_reversal.next = end_ptr
+        start_ptr.next = after_reversal
+            
     
 def find_kth_from_end(ll, k):
     fast_ptr = ll.head
