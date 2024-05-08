@@ -264,11 +264,12 @@ class LinkedList:
             current_ptr = current_ptr.next
         
             
-        temp = tail_reversal
-        tail_reversal = head_reversal
-        head_reversal = temp
+        # temp = tail_reversal
+        # tail_reversal = head_reversal
+        # head_reversal = temp
             
         for count in range(end_index - start_index + 1):
+            print("head_reversal = ", head_reversal.value)
             current_ptr = head_reversal
             before = current_ptr
             after  = current_ptr.next
