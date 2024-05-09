@@ -259,23 +259,27 @@ class LinkedList:
             if count == end_index:
                 end_ptr = current_ptr
                 after_reversal = current_ptr.next
-                tail_reversal = end_ptr                
-                
-            current_ptr = current_ptr.next
+                tail_reversal = end_ptr       
+
+            if current_ptr is not None:
+                current_ptr = current_ptr.next
+            else:
+                continue
         
             
         # temp = tail_reversal
         # tail_reversal = head_reversal
         # head_reversal = temp
             
-        for count in range(end_index - start_index + 1):
-            print("head_reversal = ", head_reversal.value)
-            current_ptr = head_reversal
-            before = current_ptr
-            after  = current_ptr.next
-            temp = after
-            after.next = before
-            current_ptr = temp.next
+        current_ptr = head_reversal
+        for count in range(end_index - start_index):
+            while current_ptr and current_ptr.next:
+                before = current_ptr
+                print("before = ", before.value)
+                after  = current_ptr.next
+                print("After = ", after.value)
+                after.next = before
+                current_ptr = after
         
         before_reversal.next = end_ptr
         start_ptr.next = after_reversal
