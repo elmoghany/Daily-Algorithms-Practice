@@ -25,6 +25,10 @@ class LinkedList {
         }
         return count
     }
+    getFirst(){
+        let node = this.head
+        return node
+    }
 }
 
 module.exports = { Node, LinkedList };
