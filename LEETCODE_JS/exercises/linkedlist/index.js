@@ -19,3 +19,9 @@ class LinkedList {
 }
 
 module.exports = { Node, LinkedList };
+
+const nodeOne = new Node(5)
+const list = new LinkedList()
+list.head = nodeOne
+list.insertFirst(4)
+console.log(list)
