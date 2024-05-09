@@ -9,6 +9,8 @@
   "jest": {
     "testEnvironment": "node"
   },
-  "author": "stephen grider",
-  "license": "ISC"
+  "author": "Mohamed Elmoghany",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
 }
