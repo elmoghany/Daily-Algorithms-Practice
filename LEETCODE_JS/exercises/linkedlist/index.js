@@ -44,6 +44,9 @@ class LinkedList {
     clear(){
         this.head = null
     }
+    removeFirst(){
+        
+    }
 }
 
 module.exports = { Node, LinkedList };
