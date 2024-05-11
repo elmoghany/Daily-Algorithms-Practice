@@ -99,6 +99,26 @@ class LinkedList {
         }
         return null
     }
+    removeAt(index){
+        let node = this.head
+        let count = 0
+        while(node){
+            if(node == this.head){
+                this.head = node.next
+                return node
+            } else if(count === index-1){
+                prior_node = node
+            } else if (count == index){
+                prior_node.next = node.next
+                node_to_remove = node
+                node_to_remove.next= null
+                return node
+            }
+            node = node.next
+            count++
+        }
+        return null
+    }
 }
 
 module.exports = { Node, LinkedList };
