@@ -55,6 +55,7 @@ class LinkedList {
             return
         } else if (!this.head.next){
             this.head = null
+            return
         } else{
             let prior_node = this.head
             let current_node = prior_node.next
@@ -65,6 +66,21 @@ class LinkedList {
                 }
                 current_node = current_node.next
                 prior_node = prior_node.next
+            }
+        }
+    }
+    insertLast(data){
+        if(!this.head){
+            this.head = new Node(data)
+        } else if (!this.head.next){
+            this.head.next = new Node(data)
+        } else {
+            let node = this.head.next
+            while(node){
+                if(!node.next){
+                    node.next = new Node(data)
+                }
+                node = node.next
             }
         }
     }
