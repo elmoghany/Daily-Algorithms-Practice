@@ -91,7 +91,6 @@ class LinkedList {
         let count = 0
         while(node && count <= index){
             if(index === count){
-                console.log("count= ", count)
                 return node
             }
             count++
@@ -115,6 +114,25 @@ class LinkedList {
             return
         } else {
             prior_node.next = prior_node.next.next
+        }
+    }
+    insertAt(data, index){
+        if(!this.head){
+            this.head = new Node(data)
+            return
+        }
+        if(index == 0){
+            this.insertFirst(data)
+            return
+        }
+        let prior_node = this.getAt(index-1)
+        if(!prior_node) {
+            this.insertLast(data,index)
+        } else if(!prior_node.next){ //add to last node
+            this.insertLast(data,index)
+        } else {
+            let inserted_node = new Node(data, prior_node.next)
+            prior_node.next = inserted_node
         }
     }
 }
