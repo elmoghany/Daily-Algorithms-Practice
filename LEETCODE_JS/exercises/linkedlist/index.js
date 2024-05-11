@@ -152,10 +152,11 @@ function *numbers(){
 }
 const generator = numbers()
 //1st call ... execute till yield statment ... no value is passed ... result = 1 + 1 ... (yield result) ==== return  2
-console.log(generator.next())
+// console.log(generator.next())
+
 //2nd call ... execute the yield statement... return 20 + (yield 10) = 30
 // console.log(generator.next(10))
-console.log(generator.next())
+// console.log(generator.next())
 
 function *numbers(){
     yield 1
@@ -184,13 +185,20 @@ class Tree{
 
     *printValues(){
         yield this.value
+        for (let child of this.children){
+            yield* this.child.printValues()
+        }
     }
 }
 const tree = new Tree(1,[
     new Tree(2, [new Tree(4)]),
     new Tree(3)
 ])
-
+const values2 = []
+for(let value of tree.printValues()){
+    console.log(values2.push(value))
+}
+    // tree.printValues().next
 
 module.exports = { Node, LinkedList };
 
