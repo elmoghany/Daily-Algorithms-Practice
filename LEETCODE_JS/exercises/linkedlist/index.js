@@ -135,6 +135,9 @@ class LinkedList {
             prior_node.next = inserted_node
         }
     }
+    forEach(){
+        
+    }
 }
 
 module.exports = { Node, LinkedList };
