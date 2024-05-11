@@ -52,9 +52,9 @@ class LinkedList {
     }
     removeLast(){
         if(!this.head){
-            return null
+            return
         } else if (!this.head.next){
-            return null
+            this.head = null
         } else{
             let prior_node = this.head
             let current_node = prior_node.next
