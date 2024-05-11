@@ -142,15 +142,22 @@ class LinkedList {
             node = node.next 
         }
     }
+    *[Symbol.iterator](){
+        let node = this.head
+        while(node){
+            yield node
+            node = node.next
+        }
+    }
 }
 
 //generator
 // * & yield => means generator function
-function *numbers(){
-    const result = 1 + 1
-    return 20 + (yield result)
-}
-const generator = numbers()
+// function *numbers1(){
+//     const result1 = 1 + 1
+//     return 20 + (yield result1)
+// }
+// const generator1 = numbers1()
 //1st call ... execute till yield statment ... no value is passed ... result = 1 + 1 ... (yield result) ==== return  2
 // console.log(generator.next())
 
@@ -158,46 +165,46 @@ const generator = numbers()
 // console.log(generator.next(10))
 // console.log(generator.next())
 
-function *numbers(){
-    yield 1
-    yield 2
-    yield* moreNumbers
-    yield 6
-    yield 7
-}
-function *moreNumbers(){
-    yield 3
-    yield 4
-    yield 5
-}
+// function *numbers(){
+//     yield 1
+//     yield 2
+//     yield *moreNumbers
+//     yield 6
+//     yield 7
+// }
+// function *moreNumbers(){
+//     yield 3
+//     yield 4
+//     yield 5
+// }
 
-const generator2 = numbers()
-const values = []
-for(let value of generator2){
-    values.push(value)
-}
+// const generator2 = numbers()
+// const values = []
+// for(let value of generator2){
+//     values.push(value)
+// }
 
-class Tree{
-    constructor(value = null, children = []){
-        this.value = value
-        this.children = children
-    }
+// class Tree{
+//     constructor(value = null, children = []){
+//         this.value = value
+//         this.children = children
+//     }
 
-    *printValues(){
-        yield this.value
-        for (let child of this.children){
-            yield* this.child.printValues()
-        }
-    }
-}
-const tree = new Tree(1,[
-    new Tree(2, [new Tree(4)]),
-    new Tree(3)
-])
-const values2 = []
-for(let value of tree.printValues()){
-    console.log(values2.push(value))
-}
+//     *printValues(){
+//         yield this.value
+//         for (let child of this.children){
+//             yield* this.child.printValues()
+//         }
+//     }
+// }
+// const tree = new Tree(1,[
+//     new Tree(2, [new Tree(4)]),
+//     new Tree(3)
+// ])
+// const values2 = []
+// for(let value of tree.printValues()){
+//     console.log(values2.push(value))
+// }
     // tree.printValues().next
 
 module.exports = { Node, LinkedList };
