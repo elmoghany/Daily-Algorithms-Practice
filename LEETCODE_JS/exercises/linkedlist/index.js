@@ -100,24 +100,22 @@ class LinkedList {
         return null
     }
     removeAt(index){
-        let node = this.head
-        let count = 0
-        while(node){
-            if(node == this.head){
-                this.head = node.next
-                return node
-            } else if(count === index-1){
-                prior_node = node
-            } else if (count == index){
-                prior_node.next = node.next
-                node_to_remove = node
-                node_to_remove.next= null
-                return node
-            }
-            node = node.next
-            count++
+        if(!this.head){
+            return
+        } 
+        if(index == 0){
+            this.head = this.head.next
+            return
         }
-        return null
+
+        let prior_node = this.getAt(index-1)
+        if(!prior_node){
+            return
+        } else if (!prior_node.next) {
+            return
+        } else {
+            prior_node.next = prior_node.next.next
+        }
     }
 }
 
