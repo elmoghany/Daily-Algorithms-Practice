@@ -136,9 +136,61 @@ class LinkedList {
         }
     }
     forEach(){
-        
+        let node = this.head
+        while(node){
+            node.data += 10
+            node = node.next 
+        }
     }
 }
+
+//generator
+// * & yield => means generator function
+function *numbers(){
+    const result = 1 + 1
+    return 20 + (yield result)
+}
+const generator = numbers()
+//1st call ... execute till yield statment ... no value is passed ... result = 1 + 1 ... (yield result) ==== return  2
+console.log(generator.next())
+//2nd call ... execute the yield statement... return 20 + (yield 10) = 30
+// console.log(generator.next(10))
+console.log(generator.next())
+
+function *numbers(){
+    yield 1
+    yield 2
+    yield* moreNumbers
+    yield 6
+    yield 7
+}
+function *moreNumbers(){
+    yield 3
+    yield 4
+    yield 5
+}
+
+const generator2 = numbers()
+const values = []
+for(let value of generator2){
+    values.push(value)
+}
+
+class Tree{
+    constructor(value = null, children = []){
+        this.value = value
+        this.children = children
+    }
+
+    *printValues(){
+        yield this.value
+    }
+}
+const tree = new Tree(1,[
+    new Tree(2, [new Tree(4)]),
+    new Tree(3)
+])
+
 
 module.exports = { Node, LinkedList };
 
