@@ -37,6 +37,7 @@ class LinkedList {
                     return node
                 node = node.next
             }
+            return null
         }else{
             return null
         }
@@ -75,36 +76,36 @@ class LinkedList {
         } else if (!this.head.next){
             this.head.next = new Node(data)
         } else {
-            let node = this.head.next
+            let node = this.head
             while(node){
                 if(!node.next){
                     node.next = new Node(data)
+                    return
                 }
                 node = node.next
             }
         }
     }
     getAt(index){
-        if (!this.head){
-            return null
-        } else {
-            let count = 0
-            let node = this.head
-            while(count <= index){
-                if(index == count){
-                    return node 
-                }
-                count++
-                node = node.next
+        let node = this.head
+        let count = 0
+        while(node && count <= index){
+            if(index === count){
+                console.log("count= ", count)
+                return node
             }
-        } 
+            count++
+            node = node.next
+        }
+        return null
     }
 }
 
 module.exports = { Node, LinkedList };
 
-const nodeOne = new Node(5)
-const list = new LinkedList()
-list.head = nodeOne
-list.insertFirst(4)
-console.log(list)
+// const nodeOne = new Node(5)
+// const list = new LinkedList()
+// list.head = nodeOne
+// list.insertFirst(4)
+// console.log(list.getAt(0))
+// console.log(list.getAt(1))
