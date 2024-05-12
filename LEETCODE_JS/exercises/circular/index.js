@@ -24,7 +24,7 @@ function circular(list) {
             return true
         }
     }
-    return False
+    return false
 }
 
 module.exports = circular;
