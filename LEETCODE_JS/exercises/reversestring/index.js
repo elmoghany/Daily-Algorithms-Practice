@@ -14,9 +14,7 @@
 //     return temp.join('')
 // }
 function reverse(str) {
-    const temp = str.split('')
-    temp.reverse()
-    return temp.join('')
+    return str.split('').reverse().join('')
 }
 
 module.exports = reverse;
