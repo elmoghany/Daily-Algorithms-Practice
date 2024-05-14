@@ -5,9 +5,8 @@
 // maxChar("abcccccccd") === "c"
 // maxChar("apple 1231111") === "1"
 
-function maxChar(characters) {4
+function maxChar(characters) {
     const char_map = {}
-    let prior_char = -1
     let max = -1
     let max_char = null
     for (let char of characters) {
