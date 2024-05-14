@@ -27,15 +27,12 @@
 //     return reversed
 // }
 
-// function reverse(str) {
-//     return str.split('').reduce( (reversed, character) => {
-//         return character + reversed
-//     }, '')
-// }
+
 function reverse(str) {
-    return str.split('').reduce( (reversed, character) => 
-        character + reversed
-    , '')
+    return str.split('').reduce( (accumulator, current_char) => {
+        return current_char + accumulator
+    }, )
 }
 
+reverse("hello")
 module.exports = reverse;
