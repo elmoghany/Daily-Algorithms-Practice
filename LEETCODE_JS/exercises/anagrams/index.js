@@ -9,11 +9,13 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-    stringA = stringA.toLowerCase().replace(/[^\w]/g,'')
-    stringB = stringB.toLowerCase().replace(/[^\w]/g,'')
     const stringA_map = {}
     const stringB_map = {}
-    if(stringA.length != stringB.length) return False
+
+    stringA = stringA.toLowerCase().replace(/[^\w]/g,'')
+    stringB = stringB.toLowerCase().replace(/[^\w]/g,'')
+    
+    if(stringA.length != stringB.length) return false
     else {
         for(let string in stringA){
             if(!stringA_map[string]){
