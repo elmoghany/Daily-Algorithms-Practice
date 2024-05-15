@@ -9,7 +9,13 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-    
+    stringA = stringA.toLowerCase().replace(/[^\w]/g,'')
+    stringB = stringB.toLowerCase().replace(/[^\w]/g,'')
+    if(stringA.length != stringB.length) return False
+    else {
+        
+    }
 }
 
+anagrams('RAIL. safety', 'fairy tales')
 module.exports = anagrams;
