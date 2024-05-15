@@ -14,33 +14,36 @@ function anagrams(stringA, stringB) {
 
     stringA = stringA.toLowerCase().replace(/[^\w]/g,'')
     stringB = stringB.toLowerCase().replace(/[^\w]/g,'')
-    console.log(stringA,stringB)
 
     if(stringA.length != stringB.length) return false
     else {
-        for(let string in stringA){
-            if(!stringA_map[string]){
-                stringA_map[string] = 1
+        for(let char of stringA){
+            console.log(char)
+            if(!stringA_map[char]){
+                stringA_map[char] = 1
             } else{
-                stringA_map[string]++
+                stringA_map[char]++
             }
         }
-        for(let string in stringB){
-            if(!stringB_map[string]){
-                stringB_map[string] = 1
+        for(let char of stringB){
+            if(!stringB_map[char]){
+                stringB_map[char] = 1
             } else{
-                stringB_map[string]++
+                stringB_map[char]++
             }
         }
-        for(let string in stringA){
-            if(stringA_map[string] == stringB_map[string]){
-                continue
-            }
-            else{
-                return false
-            }
-        }    
-        return true 
+        if(stringA_map.length != stringB_map.length) return false
+        else{
+            for(let char of stringA){
+                if(stringA_map[char] == stringB_map[char]){
+                    continue
+                }
+                else{
+                    return false
+                }
+            }    
+            return true
+        }
     }
 }
 
