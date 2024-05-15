@@ -17,8 +17,10 @@ function chunk(array, size) {
         if(sub_array_cnt == 0){
             array_chunks[chunk_cnt] = []
         }
+        
         array_chunks[chunk_cnt][sub_array_cnt] = array[i]
         sub_array_cnt++
+
         if(sub_array_cnt >= size){
             sub_array_cnt = 0
             chunk_cnt++
