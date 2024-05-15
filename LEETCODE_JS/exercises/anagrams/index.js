@@ -14,7 +14,8 @@ function anagrams(stringA, stringB) {
 
     stringA = stringA.toLowerCase().replace(/[^\w]/g,'')
     stringB = stringB.toLowerCase().replace(/[^\w]/g,'')
-    
+    console.log(stringA,stringB)
+
     if(stringA.length != stringB.length) return false
     else {
         for(let string in stringA){
@@ -43,5 +44,4 @@ function anagrams(stringA, stringB) {
     }
 }
 
-anagrams('RAIL. safety', 'fairy tales')
 module.exports = anagrams;
