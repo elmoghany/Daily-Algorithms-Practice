@@ -17,21 +17,8 @@ function anagrams(stringA, stringB) {
 
     if(stringA.length != stringB.length) return false
     else {
-        for(let char of stringA){
-            console.log(char)
-            if(!stringA_map[char]){
-                stringA_map[char] = 1
-            } else{
-                stringA_map[char]++
-            }
-        }
-        for(let char of stringB){
-            if(!stringB_map[char]){
-                stringB_map[char] = 1
-            } else{
-                stringB_map[char]++
-            }
-        }
+        stringA_map = buildStringMap(stringA)
+        stringB_map = buildStringMap(stringB)
         if(stringA_map.length != stringB_map.length) return false
         else{
             for(let char of stringA){
@@ -45,6 +32,17 @@ function anagrams(stringA, stringB) {
             return true
         }
     }
+}
+function buildStringMap(str){
+    const my_map = {}
+    for(let char of str){
+        if(!my_map[char]){
+            my_map[char] = 1
+        } else{
+            my_map[char]++
+        }
+    }
+    return my_map
 }
 
 module.exports = anagrams;
