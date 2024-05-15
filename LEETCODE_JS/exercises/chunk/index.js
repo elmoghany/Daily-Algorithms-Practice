@@ -9,7 +9,23 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
-    
+    let array_chunks = []
+    let chunk_cnt = 0
+    let sub_array_cnt = 0
+
+    for(let i=0; i<array.length; i++){
+        if(sub_array_cnt == 0){
+            array_chunks[chunk_cnt] = []
+        }
+        array_chunks[chunk_cnt][sub_array_cnt] = array[i]
+        sub_array_cnt++
+        if(sub_array_cnt >= size){
+            sub_array_cnt = 0
+            chunk_cnt++
+        }
+    }
+    console.log(array_chunks)
+    return array_chunks
 }
 
 chunk([1, 2, 3, 4], 2)
