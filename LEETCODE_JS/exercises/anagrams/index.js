@@ -29,6 +29,15 @@ function anagrams(stringA, stringB) {
                 stringB_map[string]++
             }
         }
+        for(let string in stringA){
+            if(stringA_map[string] == stringB_map[string]){
+                continue
+            }
+            else{
+                return false
+            }
+        }    
+        return true 
     }
 }
 
