@@ -11,9 +11,24 @@
 function anagrams(stringA, stringB) {
     stringA = stringA.toLowerCase().replace(/[^\w]/g,'')
     stringB = stringB.toLowerCase().replace(/[^\w]/g,'')
+    const stringA_map = {}
+    const stringB_map = {}
     if(stringA.length != stringB.length) return False
     else {
-        
+        for(let string in stringA){
+            if(!stringA_map[string]){
+                stringA_map[string] = 1
+            } else{
+                stringA_map[string]++
+            }
+        }
+        for(let string in stringB){
+            if(!stringB_map[string]){
+                stringB_map[string] = 1
+            } else{
+                stringB_map[string]++
+            }
+        }
     }
 }
 
