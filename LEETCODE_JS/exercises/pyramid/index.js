@@ -27,21 +27,23 @@
 //       '#######' 0. 7. 0
 
 function pyramid(n) {
-    str = ''
-    count=1
-    odd_cntr = 1
+    let str = ''
+    let count=1
+    let odd_cntr = 1
     while( count <= n ){
-        if(count <= n){
-            str = console.log(' ').repeat(n-count)
-            str = str + console.log('#').repeat(odd_cntr)
-            str = str + console.log(' ').repeat(n-count)
+        if(count < n){
+            str = (' ').repeat(n-count)
+            str = str + ('#').repeat(odd_cntr)
+            str = str + (' ').repeat(n-count)
         } 
-        // else {
-        //     console.log('#').repeat(n-count+1)
-        // }
+        else {
+            str = ('#').repeat(odd_cntr)
+        }
+        console.log(str)
         count++
         odd_cntr+=2
     }
 }
 
+pyramid(5)
 module.exports = pyramid;
