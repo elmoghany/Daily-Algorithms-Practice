@@ -45,5 +45,4 @@ function pyramid(n) {
     }
 }
 
-pyramid(5)
 module.exports = pyramid;
