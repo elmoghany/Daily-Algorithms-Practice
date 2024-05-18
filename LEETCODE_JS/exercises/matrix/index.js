@@ -17,8 +17,35 @@
 
 function matrix(n) {
     let sub_mat = []
+    let last_count = 1
+    
+    //Sub Matrix creation
     for(let i = 0; i < n; i++){
         sub_mat[i] = []
+    }
+
+    //1st row
+    for(let j = 0; j < n; j++){
+        sub_mat[0][j] = last_count
+        last_count++
+    }
+    
+    //last column
+    for(let i = 1; i < n; i++){
+        sub_mat[i][n-1] = last_count
+        last_count++
+    }
+
+    //last row
+    for(let j = n-2; j >= 0; j--){
+        sub_mat[n-1][j] = last_count
+        last_count++
+    }
+
+    //first column
+    for ( let i = n-2; i > 0; i--){
+        sub_mat[i][0] = last_count
+        last_count++
     }
 }
 
