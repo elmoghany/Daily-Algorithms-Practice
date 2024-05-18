@@ -24,29 +24,46 @@ function matrix(n) {
         sub_mat[i] = []
     }
 
-    //1st row
+    /////////////////////////////
+
+    //i=0 row
     for(let j = 0; j < n; j++){
         sub_mat[0][j] = last_count
         last_count++
     }
     
-    //last column
+    //j=n-1 column
     for(let i = 1; i < n; i++){
         sub_mat[i][n-1] = last_count
         last_count++
     }
 
-    //last row
+    //i=n-1 row
     for(let j = n-2; j >= 0; j--){
         sub_mat[n-1][j] = last_count
         last_count++
     }
 
-    //first column
+    //j=0 column
     for ( let i = n-2; i > 0; i--){
         sub_mat[i][0] = last_count
         last_count++
     }
+
+    //i=1 row
+    for( let j = 1; j <= n-2; j++){
+        sub_mat[1][j] = last_count
+        last_count++
+    }
+
+    //i=2 row
+    for( let j = n-2; j >= 1; j--){
+        sub_mat[2][j] = last_count
+        last_count++
+    }
+
+    return sub_mat
 }
 
+matrix(4)
 module.exports = matrix;
