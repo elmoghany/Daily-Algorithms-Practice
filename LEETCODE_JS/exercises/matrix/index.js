@@ -16,7 +16,10 @@
 //     [10,  9,  8, 7]]
 
 function matrix(n) {
-    
+    let sub_mat = []
+    for(let i = 0; i < n; i++){
+        sub_mat[i] = []
+    }
 }
 
 module.exports = matrix;
