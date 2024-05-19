@@ -33,7 +33,7 @@ function matrix(n) {
     //j
     let start_col = 0
     let end_col = n - 1
-    
+    let loop = 0
     while(start_col <= end_col && start_row <= end_row){
         //1
         //i=0 1st row forward
@@ -46,7 +46,7 @@ function matrix(n) {
         //2
         //j=n-1 last column down
         for(let i = start_row; i <= end_row; i++){
-            sub_mat[i][n-1] = last_count
+            sub_mat[i][end_col] = last_count
             last_count++
         }
         end_col--
@@ -54,7 +54,7 @@ function matrix(n) {
         //3
         //i=n-1 last row backwards
         for(let j = end_col; j >= start_col; j--){
-            sub_mat[n-1][j] = last_count
+            sub_mat[end_row][j] = last_count
             last_count++
         }
         end_row--
@@ -62,12 +62,18 @@ function matrix(n) {
         //4
         //j=0 1st column up
         for ( let i = end_row; i >= start_row; i--){
-            sub_mat[i][0] = last_count
+            sub_mat[i][start_col] = last_count
             last_count++
         }
         start_col++
+        loop++
     }
-
+    console.log("loop ",loop)
+    console.log("start_col = ", start_col)
+    console.log("end_col   = ", end_col)
+    console.log("start_row = ", start_row)
+    console.log("end_row   = ", end_row)
+    
     // //i=1 row
     // for( let j = 1; j <= n-2; j++){
     //     sub_mat[1][j] = last_count
