@@ -10,6 +10,21 @@
 //   s.pop(); // returns 2
 //   s.pop(); // returns 1
 
-class Stack {}
+class Stack {
+    constructor(){
+        this.datas = []
+    }
+    push(record){
+        this.datas.push(record)
+    }
+
+    pop(){
+        return this.datas.pop()
+    }
+
+    peek(){
+        return this.datas[this.datas.length - 1]
+    }
+}
 
 module.exports = Stack;
