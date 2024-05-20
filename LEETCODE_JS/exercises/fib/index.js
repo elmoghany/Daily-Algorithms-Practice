@@ -8,25 +8,36 @@
 // Example:
 //   fib(4) === 3
 
-function memoize(fn){
-    const cache = {}
-    return function(...args){
-        if(cache[args]){
-            return cache[args]
-        }
-        const result = fn.apply(this, args)
-        cache[args] = result
+// function memoize(fn){
+//     const cache = {}
+//     return function(...args){
+//         if(cache[args]){
+//             return cache[args]
+//         }
+//         const result = fn.apply(this, args)
+//         cache[args] = result
 
-        return result
+//         return result
+//     }
+// }
+let memoizedValue = []
+function fib(n) {
+    if(memoizedValue[n]){
+        return memoizedValue[n]
     }
+    let result
+    if(n <= 0) {
+        result = 0
+    }
+    else if(n == 1) {
+            result = 1
+        } else {
+                // result = memoizedFib(n-1, memoizedValue) + memoizedFib(n-2, memoizedValue) 
+                result = fib(n-1) + fib(n-2) 
+    }
+    memoizedValue[n] = result
+    return result
 }
-function slowFib(n) {
-    if(n == 0) return 0
-    if(n == 1) return 1
-    return fib(n-1) + fib(n-2)
-}
-
-const fib = memoize(slowFib)
 
 // function fib(n) {
 //     let prior_1 = 1
@@ -55,8 +66,10 @@ const fib = memoize(slowFib)
 //     if(n == 0) return 0
 //     if(n == 1) return 1
 //     sum = fib(n-1) + fib(n-2)
+//     console.log(sum)
 //     return sum
 // }
+// fib(1000)
 
-fib(2)
+// module.exports = memoizedFib;
 module.exports = fib;
