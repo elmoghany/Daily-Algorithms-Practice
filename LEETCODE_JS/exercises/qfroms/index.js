@@ -26,13 +26,28 @@ class Queue {
 
     
     peek(){
-        
+        let record
+        while(this.mainStack.peek()){
+            record = this.mainStack.pop()
+            this.secondaryStack.push(record)
+        }
+        while(this.secondaryStack.peek()){
+            this.mainStack.push(this.secondaryStack.pop())
+        }
+        return record
     }
     
     remove(){
-        while(!mainStack.peek()){
-            mainStack
+        let record
+        while(this.mainStack.peek()){
+            record = this.mainStack.pop()
+            this.secondaryStack.push(record)
         }
+        record = this.secondaryStack.pop()
+        while(this.secondaryStack.peek()){
+            this.mainStack.push(this.secondaryStack.pop())
+        }
+        return record
     }
 }
 
