@@ -15,6 +15,15 @@ class Node {
         this.data = data
         this.children = children
     }
+
+    add(data){
+        const node = new Node(data)
+        this.children.push(node)
+    }
+
+    remove(){
+        this.children.pop()
+    }
 }
 
 class Tree {}
