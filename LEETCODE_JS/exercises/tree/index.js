@@ -21,8 +21,10 @@ class Node {
         this.children.push(node)
     }
 
-    remove(){
-        this.children.pop()
+    remove(data){
+        this.children = this.children.filter( node =>{
+            return node.data !== data
+        } )
     }
 }
 
