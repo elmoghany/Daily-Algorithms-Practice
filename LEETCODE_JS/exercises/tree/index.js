@@ -36,7 +36,7 @@ class Tree {
         let current_node = this.root
         let current_data = []
         let visited = []
-        current_data.push(this.root)
+        current_data.push(current_node)
         while(current_data.length){
             current_node = current_data.shift()
             visited.push(current_node)
@@ -45,7 +45,21 @@ class Tree {
             fn(current_node)
         }
     }
-
+//      10
+//  5       15
+//2   6  12    20
+    traverseDF(fn){
+        let current_node = this.root
+        let current_data = []
+        let visited = []
+        current_data.push(current_node)
+        while(current_data.length){
+            current_node = current_data.shift()
+            visited.push(current_node)
+            if(current_node.children) current_data.unshift(...current_node.children)
+            fn(current_node)
+        }
+    }
 
 }
 
