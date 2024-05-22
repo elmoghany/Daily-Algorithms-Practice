@@ -48,6 +48,38 @@ class BST {
             }
         }
     }
+    find(value){
+        let done = false
+        let current = this.root
+        if(value == this.root.value) return true
+        while(!done){
+            //left
+            if(value < current.value){
+                if(!current){
+                    console.log("null left")
+                    return false
+                } else {
+                    current = current.left
+                    console.log("left = ", current.value)
+                }
+            }
+            //right
+            else if (value > current.value){
+                if(!current){
+                    console.log("null right")
+                    return false
+                } else {
+                    current = current.right
+                    console.log("right = ",current.value)
+                }
+            }
+            //equal
+            else if(value == current.value){
+                console.log("equal = ", value)
+                return true
+            }
+        }
+    }
 }
 
 let tree = new BST()
@@ -61,6 +93,8 @@ tree.insert(7)
 tree.insert(1)
 tree.insert(6)
 tree.insert(8)
+console.log("############################")
+console.log(tree.find(2))
 console.log(tree)
 //      10
 //  5       13
