@@ -42,6 +42,7 @@ class Tree {
             visited.push(current_node)
             if(current_node.children) current_data.push(...current_node.children)
             
+            //this is redundant!!! not needed!
             fn(current_node)
         }
     }
@@ -57,6 +58,8 @@ class Tree {
             current_node = current_data.shift()
             visited.push(current_node)
             if(current_node.children) current_data.unshift(...current_node.children)
+
+            //this is redundant!!! not needed!
             fn(current_node)
         }
     }
