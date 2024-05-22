@@ -12,7 +12,19 @@
 // Answer: [1, 3, 2]
 
 function levelWidth(root) {
-    
+    let count = []
+    let loop = 0
+    let node = root
+    if(node){
+        count[0] = 1
+        loop++
+    }
+    for(let child of root.children){
+
+        loop++
+    }
+
+    return count
 }
 
 module.exports = levelWidth;
