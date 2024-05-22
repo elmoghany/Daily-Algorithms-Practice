@@ -63,6 +63,16 @@ class Tree {
             fn(current_node)
         }
     }
+    // traverseDF(fn){
+    //     let current_data = []
+    //     function traverse(node){
+    //         current_data.push(node)
+    //         if(node.children) traverse(...node.children)
+            
+    //         fn(node)
+    //     }
+    //     traverse(this.root)
+    // }
 
 }
 
