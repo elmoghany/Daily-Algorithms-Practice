@@ -33,24 +33,20 @@ class Tree {
         this.root = null
     }
     traverseBF(fn){
-        const arr = [this.root]
-        while(arr.length){
-            const node = arr.shift()
-            arr.push(...node.children)
+        let current_node = this.root
+        let current_data = []
+        let visited = []
+        current_data.push(this.root)
+        while(current_data.length){
+            current_node = current_data.shift()
+            visited.push(current_node)
+            if(current_node.children) current_data.push(...current_node.children)
             
-            fn(node)
+            fn(current_node)
         }
     }
-    traverseDF(fn){
-        const arr = [this.root]
-        while(arr.length){
-            const node = arr.shift()
-            arr.unshift(...node.children)
-            
-            fn(node)
-        }
 
-    }
+
 }
 
 // //usage
@@ -59,3 +55,25 @@ class Tree {
 // tree.root = node
 
 module.exports = { Tree, Node };
+
+
+
+// traverseBF(fn){
+//     const arr = [this.root]
+//     while(arr.length){
+//         const node = arr.shift()
+//         arr.push(...node.children)
+        
+//         fn(node)
+//     }
+// }
+// traverseDF(fn){
+//     const arr = [this.root]
+//     while(arr.length){
+//         const node = arr.shift()
+//         arr.unshift(...node.children)
+        
+//         fn(node)
+//     }
+
+// }
