@@ -22,7 +22,7 @@ LEETCODE_PYTHON/
 
 | Main Category | Subcategory | Problem # | Problem Name | Difficulty | Status | Solution |
 |---------------|-------------|-----------|--------------|------------|--------|----------|
-| Arrays & Hashing | Two Pointers | 001 | Two Sum | 🟢 | ✅ | [Link](LEETCODE_PYTHON/problems/0001-two-sum) |
+| Arrays & Hashing | Two Pointers | 001 | Two Sum | 🟢 | ✅ | [Link](LEETCODE_PYTHON/problems/0125-valid-palindrome) |
 
 
 ### Difficulty Breakdown
