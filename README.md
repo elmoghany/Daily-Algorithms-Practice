@@ -20,9 +20,9 @@ LEETCODE_PYTHON/
 
 ## 📊 Progress Tracker (Reset September 2025)
 
-| Main Category | Subcategory | Problem # | Problem Name | Difficulty | Status | Solution |
-|---------------|-------------|-----------|--------------|------------|--------|----------|
-| Arrays & Hashing | Two Pointers | 0125 | Valid Palindrome | 🟢 | ✅ | [Link](LEETCODE_PYTHON/problems/0125-valid-palindrome) |
+| Main Category | Subcategory | Problem # | Problem Name | Difficulty | Status | Performance | Solution |
+|---------------|-------------|-----------|--------------|------------|--------|----------|----------|
+| Arrays & Hashing | Two Pointers | 0125 | Valid Palindrome | 🟢 | ✅ | 88% | [Link](LEETCODE_PYTHON/problems/0125-valid-palindrome) |
 
 
 ### Difficulty Breakdown
