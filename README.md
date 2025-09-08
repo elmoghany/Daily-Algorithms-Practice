@@ -18,7 +18,7 @@ LEETCODE_PYTHON/
         └── README.MD   => Describing the problem and placing problem figures
 ```
 
-## 📊 Progress Tracker
+## 📊 Progress Tracker (Reset September 2025)
 
 | Main Category | Subcategory | Problem # | Problem Name | Difficulty | Status | Solution |
 |---------------|-------------|-----------|--------------|------------|--------|----------|
