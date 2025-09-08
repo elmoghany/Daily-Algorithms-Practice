@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Sync
-        uses: joshcai/leetcode-sync@v1.6
+        uses: joshcai/leetcode-sync@v1.7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN_FOR_LEETCODE }}
+          github-token: ${{ secrets.AUTO_SYNC_TOKEN }}
           leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
-          destination-folder: LEETCODE_PYTHON_AND_JAVASCRIPT/problems
-          #verbose: true
+          destination-folder: LEETCODE_PYTHON/problems
+          verbose: true
