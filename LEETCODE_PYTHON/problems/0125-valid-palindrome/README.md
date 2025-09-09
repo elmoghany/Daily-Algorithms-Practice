@@ -35,3 +35,11 @@ Since an empty string reads the same forward and backward, it is a palindrome.
 	<li><code>1 &lt;= s.length &lt;= 2 * 10<sup>5</sup></code></li>
 	<li><code>s</code> consists only of printable ASCII characters.</li>
 </ul>
+
+# Solution idea
+- pattern = r'[^a-zA-Z0-9]' ===> means NOT a-z, NOT A-Z, NOT 0-9
+- string = re.sub(pattern,"", s).lower() ===> filter using the pattern and replace with "" nothing and the convert to small letters
+- left_ptr = 0, right_ptr = len(string)-1
+- move both pointers at same time until they are equal
+
+
